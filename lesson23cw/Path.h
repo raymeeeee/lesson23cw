@@ -23,5 +23,6 @@ public:
 
 	void setPrice(float price);
 	void showInfo()const;
+
 };
 
