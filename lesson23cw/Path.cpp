@@ -55,7 +55,7 @@ void Path::showInfo() const
     cout << "ID: " << m_id << endl;
     cout << "From: " << m_begin << endl;
     cout << "To: " << m_end << endl;
-    cout << "Price: " << m_price << endl;
+    cout << "Price: " << m_price << "UAH" << endl;
     cout << "Distance: " << m_distance << "km" << endl;
     cout << endl;
 }

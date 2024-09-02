@@ -4,8 +4,11 @@
 #include <vector>
 #include <algorithm>
 #include <ctime>
-int main()
-{
+
+#include "Path.h"
+
+//int main()
+//{
    /* Array<int> a(10, 0);
     Array<float> b(5, 9.99);
     Array<string> c(3, "undefined");
@@ -87,15 +90,15 @@ int main()
 
 
     //3
-    vector<int> v{2, 1,-2,5,12,5, };
-    for (auto a : v) //auto = int
-    {
-        cout << a << " ";
-    }cout << endl;
+    //vector<int> v{2, 1,-2,5,12,5, };
+    //for (auto a : v) //auto = int
+    //{
+    //    cout << a << " ";
+    //}cout << endl;
 
-    cout << *max_element(v.begin(), v.end()) << endl;
-    cout << *min_element(v.begin(), v.end()) << endl;
-    cout << *min_element(v.begin(), v.end(), [](int a, int b) {return a < b && a % 2 == 0; }) << endl;
+    //cout << *max_element(v.begin(), v.end()) << endl;
+    //cout << *min_element(v.begin(), v.end()) << endl;
+    //cout << *min_element(v.begin(), v.end(), [](int a, int b) {return a < b && a % 2 == 0; }) << endl;
 
 
     //4 - incomplete
@@ -109,4 +112,21 @@ int main()
     ////zero = find(v.begin(), v.end(), 0);
     ////cout << *zero;
     
+//}
+
+int main() {
+    vector<Path> Kharkiv;
+    Kharkiv.push_back(Path("768x0", "Pivdenniy Vokzal", "Oleksiyvka", 10, 5.6));
+    Kharkiv.push_back(Path("4576x123", "Istorichniy Muzey", "Heroiv", 15, 9));
+    Kharkiv.push_back(Path("111x989", "Industrialna", "Centralniy Park", 7, 8.1));
+
+    for (auto item : Kharkiv)
+    {
+        item.showInfo();
+
+    }cout << "-----------------------------------------------" << endl;
+
+    auto it = max_element(Kharkiv.begin(), Kharkiv.end(), [](Path a, Path b) {return a.getDistance() < b.getDistance(); });
+
+    it->showInfo();
 }
